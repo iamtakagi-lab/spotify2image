@@ -3,8 +3,20 @@ import { NowRequest, NowResponse } from "@vercel/node"
 import fs from "fs"
 import path from "path"
 
+function chromiumFontSetup() {
+    if (process.env.HOME == null) process.env.HOME = "/tmp"
+    const dest = process.env.HOME + "/.fonts"
+    if (!fs.existsSync(dest)) fs.mkdirSync(dest)
+    const src = __dirname+"/../fonts/mplus"
+    for (const font of fs.readdirSync(src)) {
+        if (!font.endsWith(".ttf")) continue
+        if (fs.existsSync(path.join(dest, font))) continue
+        fs.copyFileSync(path.join(src, font), path.join(dest, font))
+    }
+}
 
 async function shot(embedUrl: string) {
+    chromiumFontSetup()
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: chromium.args,
