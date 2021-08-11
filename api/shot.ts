@@ -3,7 +3,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node"
 import fs from "fs"
 import path from "path"
 
-function chromiumFontSetup() {
+const chromiumFontSetup = () => {
     if (process.env.HOME == null) process.env.HOME = "/tmp"
     const dest = process.env.HOME + "/.fonts"
     if (!fs.existsSync(dest)) fs.mkdirSync(dest)
@@ -15,7 +15,7 @@ function chromiumFontSetup() {
     }
 }
 
-async function shot(embedUrl: string) {
+const shot = async (embedUrl: string) => {
     chromiumFontSetup()
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
