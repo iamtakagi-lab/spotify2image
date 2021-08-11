@@ -4,6 +4,8 @@ Spotify Embed を 画像出力するサービスです
 - 対応ページ
     - https://open.spotify.com/embed/track/xxx
     - https://open.spotify.com/embed/album/xxx
+    - https://open.spotify.com/embed/artist/xxx
+    - https://open.spotify.com/embed/playlist/xxx
 
 ## HTML
 ```html
