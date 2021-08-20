@@ -1,5 +1,5 @@
 import chromium from "chrome-aws-lambda"
-import { VercelRequest, VercelResponse } from "@vercel/node"
+import { NowRequest, NowResponse } from "@vercel/node"
 import fs from "fs"
 import path from "path"
 
@@ -40,7 +40,7 @@ const shot = async (embedUrl: string) => {
     }
 }
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: NowRequest, res: NowResponse) => {
     res.setHeader("X-Robots-Tag", "noindex")
     const type = req.query["type"]
     const id = req.query["id"]
