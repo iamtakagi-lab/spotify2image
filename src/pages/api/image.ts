@@ -17,7 +17,7 @@ const chromiumFontSetup = () => {
 }
 
 const shot = async (embedUrl: string) => {
-    chromiumFontSetup()
+    //chromiumFontSetup()
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: chromium.args,
