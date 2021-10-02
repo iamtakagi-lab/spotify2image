@@ -5,7 +5,7 @@ import path from 'path'
 import { SPOTIFY_IMAGE_HEIGHT, SPOTIFY_IMAGE_WIDTH } from "../../consts";
 
 const shot = async (embedUrl: string) => {
-    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Medium.otf')
+    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf')
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: chromium.args,
