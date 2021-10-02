@@ -4,20 +4,8 @@ import fs from 'fs'
 import path from 'path'
 import { SPOTIFY_IMAGE_HEIGHT, SPOTIFY_IMAGE_WIDTH } from "../../consts";
 
-const chromiumFontSetup = () => {
-    if (process.env.HOME == null) process.env.HOME = "/tmp"
-    const dest = process.env.HOME + "/.fonts"
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest)
-    const src = __dirname + "../../../fonts/mplus"
-    for (const font of fs.readdirSync(src)) {
-        if (!font.endsWith(".ttf")) continue
-        if (fs.existsSync(path.join(dest, font))) continue
-        fs.copyFileSync(path.join(src, font), path.join(dest, font))
-    }
-}
-
 const shot = async (embedUrl: string) => {
-    chromiumFontSetup()
+    await chromium.font('https://ghcdn.rawgit.org/googlefonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Medium.otf')
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: chromium.args,
