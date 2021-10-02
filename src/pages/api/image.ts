@@ -1,13 +1,14 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import chromium from "chrome-aws-lambda"
-import { NowRequest, NowResponse } from "@vercel/node"
-import fs from "fs"
-import path from "path"
+import fs from 'fs'
+import path from 'path'
+import { SPOTIFY_IMAGE_HEIGHT, SPOTIFY_IMAGE_WIDTH } from "../../consts";
 
 const chromiumFontSetup = () => {
     if (process.env.HOME == null) process.env.HOME = "/tmp"
     const dest = process.env.HOME + "/.fonts"
     if (!fs.existsSync(dest)) fs.mkdirSync(dest)
-    const src = __dirname+"/../fonts/mplus"
+    const src = __dirname + "../fonts/mplus"
     for (const font of fs.readdirSync(src)) {
         if (!font.endsWith(".ttf")) continue
         if (fs.existsSync(path.join(dest, font))) continue
@@ -22,8 +23,8 @@ const shot = async (embedUrl: string) => {
         args: chromium.args,
         defaultViewport: {
             deviceScaleFactor: 2,
-            width: 312,
-            height: 80,
+            width: SPOTIFY_IMAGE_WIDTH,
+            height: SPOTIFY_IMAGE_HEIGHT,
         },
         executablePath: await chromium.executablePath,
         env: {
@@ -40,7 +41,7 @@ const shot = async (embedUrl: string) => {
     }
 }
 
-export default async (req: NowRequest, res: NowResponse) => {
+const image = async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader("X-Robots-Tag", "noindex")
     const type = req.query["type"]
     const id = req.query["id"]
@@ -57,3 +58,5 @@ export default async (req: NowRequest, res: NowResponse) => {
     res.setHeader("Content-DPR", "2.0")
     res.send(img)
 }
+
+export default image
