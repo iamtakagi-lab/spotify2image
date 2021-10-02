@@ -8,7 +8,7 @@ const chromiumFontSetup = () => {
     if (process.env.HOME == null) process.env.HOME = "/tmp"
     const dest = process.env.HOME + "/.fonts"
     if (!fs.existsSync(dest)) fs.mkdirSync(dest)
-    const src = __dirname + "../fonts/mplus"
+    const src = __dirname + "../../../fonts/mplus"
     for (const font of fs.readdirSync(src)) {
         if (!font.endsWith(".ttf")) continue
         if (fs.existsSync(path.join(dest, font))) continue
@@ -17,7 +17,7 @@ const chromiumFontSetup = () => {
 }
 
 const shot = async (embedUrl: string) => {
-    //chromiumFontSetup()
+    chromiumFontSetup()
     const { puppeteer } = chromium
     const agent = await puppeteer.launch({
         args: chromium.args,
