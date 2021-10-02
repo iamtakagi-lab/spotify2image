@@ -38,7 +38,7 @@ Spotify Embed を 画像出力するサービスです
 ```
 
 ```markdown
-[![spotify2image)(https://spotify2image.vercel.app/image/playlist/xxx#.png)](https://open.spotify.com/playlist/xxx)
+[![spotify2image](https://spotify2image.vercel.app/image/playlist/xxx#.png)](https://open.spotify.com/playlist/xxx)
 ```
 
 ## Scrapbox
