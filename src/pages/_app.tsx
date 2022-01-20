@@ -25,7 +25,7 @@ export const App: React.FC<{
                     </div>
                 </Link>
                 <div className="text-center my-3 text-md">
-                    <a href="https://github.com/iamtakagi/spotify2image" className="border-b hover:border-purple-800 text-purple-800 border-transparent">See this repository</a>
+                    <a href="https://github.com/iamtakagi/spotify2image" className="border-b hover:border-purple-800 text-purple-800 border-transparent">GitHub</a>
                 </div>
                 <Component {...pageProps} />
             </div>
