@@ -27,7 +27,7 @@ export const Service: React.FC<{}> = () => {
                     onChange={(event) => setUrl(event.target.value)}
                 />
                 <button type="submit" className="ml-2 transition duration-500 ease-in-out whitespace-nowrap block items-center justify-center border border-transparent 
-                px-2 py-2 my-1 rounded-full shadow-sm text-base font-medium text-white bg-green-500 hover:bg-transparent hover:border-green-500 hover:text-green-500">Generate</button>
+                px-2 py-2 my-1 rounded-full shadow-sm text-base font-medium text-white bg-green-500 hover:bg-transparent hover:border-green-500 hover:text-green-500">生成</button>
             </form>
 
             <div className="mt-10 flex flex-col space-y-1">
