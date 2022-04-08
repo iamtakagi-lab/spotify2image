@@ -1,6 +1,6 @@
 {
-    "routes": [
-        { "src": "/api/.*", "status": 404 },
-        { "src": "^/image/(?<type>[^/]*)/(?<id>[^/]*)", "dest": "/api/image?type=$type&id=$id" }
-    ]
+  "routes": [
+    { "src": "/api/.*", "status": 404 },
+    { "src": "^/image/(?<type>[^/]*)/(?<id>[^/]*)", "dest": "/api/image?type=$type&id=$id" }
+  ]
 }

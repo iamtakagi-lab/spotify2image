@@ -1,5 +1,5 @@
 module.exports = {
-    images: {
-      domains: ['spotify2image.vercel.app'],
-    }
-  }
+  images: {
+    domains: ["spotify2image.vercel.app"],
+  },
+};
