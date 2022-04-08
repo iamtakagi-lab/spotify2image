@@ -1,12 +1,13 @@
 # spotify2image
 
 - Supported Url
-    - https://open.spotify.com/embed/track/xxx
-    - https://open.spotify.com/embed/album/xxx
-    - https://open.spotify.com/embed/artist/xxx
-    - https://open.spotify.com/embed/playlist/xxx
+  - https://open.spotify.com/embed/track/xxx
+  - https://open.spotify.com/embed/album/xxx
+  - https://open.spotify.com/embed/artist/xxx
+  - https://open.spotify.com/embed/playlist/xxx
 
 ## HTML
+
 ```html
 <img src="https://spotify2image.vercel.app/image/track/xxx" width="312" height="80">
 ```
@@ -24,6 +25,7 @@
 ```
 
 ## Markdown
+
 ```markdown
 [![spotify2image](https://spotify2image.vercel.app/image/track/xxx#.png)](https://open.spotify.com/track/xxx)
 ```
@@ -41,6 +43,7 @@
 ```
 
 ## Scrapbox
+
 ```
 [https://spotify2image.vercel.app/image/track/xxx#.png https://open.spotify.com/track/xxx]
 ```
@@ -58,4 +61,5 @@
 ```
 
 ## LICENSE
+
 iamtakagi/spotify2image is provided under the MIT license.

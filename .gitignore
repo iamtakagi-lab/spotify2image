@@ -2,3 +2,9 @@ node_modules
 .DS_Store
 .vercel
 .next
+
+# logfiles
+*.log
+
+# VSCode
+.vscode/settings.json
