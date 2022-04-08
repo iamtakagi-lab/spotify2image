@@ -16,7 +16,7 @@
     "fmt:dprint": "dprint fmt --config ./dprint.json"
   },
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
